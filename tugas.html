@@ -1,55 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Latihan DOM</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" 
-    integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Ecommerce</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" 
+          integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" 
+          crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand">Mini Ecommerce</a>
-            <form class="form-inline" id="formItem">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search"  id="keyword" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchItem">Search</button>
-            </form>
-            <button class="btn btn-primary" id="cart"><i class="fas fa-shopping-cart"></i>(0)</button>
-        </nav>
-        <div class="row">
-            <div class="row col-md-12 mt-2"  id="listBarang"></div>
+  <div class="container">
+    
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand">Mini Ecommerce</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i>(0)</button>
+    </nav>
+
+    <div class="row mt-3">
+
+      <div class="col-md-4 mt-2">
+        <div class="card" style="width: 18rem;">
+          <img src="img/bts-kim-namjoon-aka-rm-my-constant-inspiration-11-01-2025-v0-t8mr179b9dce1.webp" class="card-img-top" alt="namjoon">
+          <div class="card-body">
+            <h5 class="card-title">Poster k-Pop Premium Kim Namjoon BTS</h5>
+            <p class="card-text">Dekorasi kamar,kualitas cetak HD</p>
+            <p class="card-text">Rp 60,000.00</p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+          </div>
         </div>
+      </div>
+
+      <div class="col-md-4 mt-2">
+        <div class="card" style="width: 18rem;">
+          <img src="img/f6385fee8d99035f819c785b5079f005.jpg" class="card-img-top" alt="Namjoon">
+          <div class="card-body">
+            <h5 class="card-title">Set Jaket & Celana Oversize Bottega Veneta</h5>
+            <p class="card-text">Outfit ala Namjoon BTS di Harper's Bazaar Korea,Premium look</p>
+            <p class="card-text">Rp 1.200.000</p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mt-2">
+        <div class="card" style="width: 18rem;">
+          <img src="img/HD-wallpaper-bts-namjoon.jpg" class="card-img-top" alt="Namjoon">
+          <div class="card-body">
+            <h5 class="card-title">Sweater Knit Motif Korean Style</h5>
+            <p class="card-text">Tebal,Hangat,cocok untuk musim hujan</p>
+            <p class="card-text">Rp 279.000</p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mt-2">
+        <div class="card" style="width: 18rem;">
+          <img src="img/HD-wallpaper-rm-bts-kim-namjoon-rap-monster-bangtansonyeondan.jpg" class="card-img-top" alt="Namjoon">
+          <div class="card-body">
+            <h5 class="card-title">Kemeja Kotak-kotak Korean Style</h5>
+            <p class="card-text">Unisex,bahan adem & nyaman dipakai</p>
+            <p class="card-text">Rp 249.000</p>
+            <a href="#" class="btn btn-primary">Add To Cart</a>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-    <script>
-        var items = [
-            ['001', 'Keyboard Logitek', 60000, 'Keyboard yang mantap untuk kantoran', 'logitek.jpg'], 
-            ['002', 'Keyboard MSI', 300000, 'Keyboard gaming MSI mekanik', 'msi.jpg'],
-            ['003', 'Mouse Genius', 50000, 'Mouse Genius biar lebih pinter', 'genius.jpeg'],
-            ['004', 'Mouse Jerry', 30000, 'Mouse yang disukai kucing', 'jerry.jpg'],
-        ];
-
-        var listBarang = document.getElementById("listBarang");
-
-        items.forEach((item) => {
-            listBarang.innerHTML += `
-                <div class="col-4 mt-2">
-                    <div class="card" style="width: 18rem;">
-                        <img src="${item[4]}" class="card-img-top" height="200px" width="200px" alt="${item[1]}">
-                        <div class="card-body">
-                            <h5 class="card-title">${item[1]}</h5>
-                            <p class="card-text">${item[3]}</p>
-                            <p class="card-text">Rp ${item[2].toLocaleString()}</p>
-                            <a href="#" class="btn btn-primary">Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
-    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+          crossorigin="anonymous"></script>
 </body>
-</html>
+</head>
